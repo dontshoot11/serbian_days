@@ -17,24 +17,23 @@
             html,
             body {
                 font-family: 'Open Sans', sans-serif;
-                height: 100%;
-                width: 100%;
-                max-height: 100vh;
-                max-width: 100vw;
-                overflow: hidden;
                 margin: 0;
             }
             .wrapper {
-                height: 100%;
                 width: 100%;
-                display: grid;
-                justify-items: center;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
                 align-items: center;
+                justify-content: center;
                 background: url('./floppa.png') center repeat;
+                padding: 20px 0;
             }
 
             .container {
-                max-width: 95%;
+                padding: 0 16px;
+                max-width: 800px;
+                margin: 0 auto;
             }
 
             .calculator {
@@ -68,33 +67,60 @@
             }
             .head {
                 background: #fff;
-                font-size: 42px;
+                font-size: 32px;
                 padding: 12px;
                 border-radius: 24px;
                 margin: 0 0 24px 0;
             }
-            .disclaimer {
+            .disclaimer  {
+                background: #fff;
+                padding: 12px;
+                border-radius: 24px;
+                margin: 0 0 24px 0;
+            }
+            .text {
                 padding: 8px 0;
             }
         </style>
         <div class="wrapper">
             <div class="container">
                 <h1 class="head">КАЛЬКУЛЯТОР БЕЗВИЗА С СЕРБИЕЙ</h1>
+                <div class="disclaimer">
+                    Согласно межправительственному соглашению (на
+                    <a target="_blank"
+                        href="http://www.consultant.ru/document/cons_doc_LAW_123614/"
+                    >
+                        русском</a
+                    >, на
+                    <a target="_blank"
+                        href="http://www.podaci.net/_zakon/propis/Zakon_o_potvrdjivanju/Z-psivrs03v0931.html"
+                        >сербском</a
+                    >
+                    на
+                    <a target="_blank"
+                        href="https://mfa.gov.rs/en/citizens/travel-serbia/visa-regime/ruska-federacija"
+                        >английском</a
+                    >
+                    ) между РФ и Сербией, граждане этих стран могут находиться в
+                    гостях друг у друга до 30 дней подряд без виз. Этот
+                    калькулятор поможет вам рассчитать, сколько таких дней у вас
+                    осталось и когда пора уезжать.
+                </div>
                 <div class="calculator">
-                    <div class="disclaimer">
+                    <p class="text">
                         Введите день въезда в Сербию. Он считается за первый
                         день.
-                    </div>
+                    </p>
                     <input id="input" type="date" />
-                    <div class="disclaimer">
+                    <p class="text">
                         Последний день - это день, до которого вы должны
-                        покинуть Сербию включительно
+                        покинуть Сербию (самое позднее - этот день, раньше можно)
                         <div id="last"></div>
-                    </div>
-                    <div class="disclaimer">
+                    </p>
+                    <p class="text">
                         Осталось дней до этого дня
                         <div id="left"></div>
-                    </div>
+                    </p>
                 </div>
             </div>
         </div>
