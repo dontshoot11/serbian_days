@@ -14,83 +14,7 @@
     </head>
     <body>
         <style>
-            html,
-            body {
-                font-family: 'Open Sans', sans-serif;
-                margin: 0;
-            }
-            .wrapper {
-                width: 100%;
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                background: url('./floppa.png') center repeat;
-                padding: 20px 0;
-            }
-
-            .container {
-                padding: 0 16px;
-                max-width: 800px;
-                margin: 0 auto;
-            }
-
-            .calculator {
-                background: #fff;
-                border-radius: 24px;
-                padding: 12px;
-                font-size: 18px;
-            }
-            #input,
-            #last,
-            #left {
-                font-size: 32px;
-                padding: 8px 0;
-                min-height: 44px;
-                display: flex;
-                align-items: center;
-                width: 100%;
-            }
-            #input {
-                cursor: pointer;
-                border-radius: 12px;
-                font-family: 'Open Sans', sans-serif;
-            }
-
-            .warning {
-                background: #ffff00;
-            }
-            .alert {
-                background: #ff0000;
-                color: #fff;
-            }
-            .head {
-                background: #fff;
-                font-size: 32px;
-                padding: 12px;
-                border-radius: 12px;
-                margin: 0 0 24px 0;
-            }
-            .disclaimer  {
-                background: #fff;
-                padding: 12px;
-                border-radius: 12px;
-                margin: 0 0 24px 0;
-            }
-
-            .banner  {
-                background: #fff;
-                padding: 12px;
-                border-radius: 12px;
-                margin: 24px 0 0 0;
-            }
-            .banner a, banner a:visited {
-                color: red;
-            }
-            .text {
-                padding: 8px 0;
-            }
+            html,body{font-family:'Open Sans',sans-serif;margin:0}.wrapper{width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url('./floppa.png') center repeat;padding:20px 0}.container{padding:0 16px;max-width:800px;margin:0 auto}.calculator{background:#fff;border-radius:24px;padding:12px;font-size:18px}#input,#last,#left{font-size:32px;padding:8px 0;min-height:44px;display:flex;align-items:center;width:100%}#input{cursor:pointer;border-radius:12px;font-family:'Open Sans',sans-serif}.warning{background:#ff0}.alert{background:red;color:#fff}.head{background:#fff;font-size:32px;padding:12px;border-radius:12px;margin:0 0 24px 0}.disclaimer{background:#fff;padding:12px;border-radius:12px;margin:0 0 24px 0}.banner{background:#fff;padding:12px;border-radius:12px;margin:24px 0 0 0}.banner a,banner a:visited{color:red}.text{padding:8px 0}
         </style>
         <div class="wrapper">
             <div class="container">
@@ -139,6 +63,6 @@
         </div>
     </body>
     <script>
-window.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector("#input"),t=document.querySelector("#left"),n=document.querySelector("#last");e.addEventListener("change",()=>{const a=Date.parse(e.value)+25056e5,o=Date.now(),s=new Date(a).toLocaleDateString("ru-RU",options),r=a-o,c=Math.ceil(r/36e5/24);t.textContent=c,n.textContent=s,c<10?t.classList.add("warning"):t.classList.remove("warning"),c<0?t.classList.add("alert"):t.classList.remove("alert")})});
+        window.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector("#input"),t=document.querySelector("#left"),n=document.querySelector("#last");e.addEventListener("change",()=>{const a=Date.parse(e.value)+25056e5,o=Date.now(),r=new Date(a).toLocaleDateString("ru-RU",{weekday:"long",year:"numeric",month:"long",day:"numeric"}),s=a-o,c=Math.ceil(s/36e5/24);t.textContent=c,n.textContent=r,c<10?t.classList.add("warning"):t.classList.remove("warning"),c<0?t.classList.add("alert"):t.classList.remove("alert")})});
     </script>
 </html>
