@@ -69,14 +69,24 @@
                 background: #fff;
                 font-size: 32px;
                 padding: 12px;
-                border-radius: 24px;
+                border-radius: 12px;
                 margin: 0 0 24px 0;
             }
             .disclaimer  {
                 background: #fff;
                 padding: 12px;
-                border-radius: 24px;
+                border-radius: 12px;
                 margin: 0 0 24px 0;
+            }
+
+            .banner  {
+                background: #fff;
+                padding: 12px;
+                border-radius: 12px;
+                margin: 24px 0 0 0;
+            }
+            .banner a, banner a:visited {
+                color: red;
             }
             .text {
                 padding: 8px 0;
@@ -122,29 +132,13 @@
                         <div id="left"></div>
                     </p>
                 </div>
+                <div class="banner">
+                    <a href="https://telegra.ph/Kak-pomoch-postradavshim-ot-vojny-v-Ukraine-esli-ty-v-Serbii-07-16">УЗНАЙТЕ, КАК МОЖНО ПОМОЧЬ ПОСТРАДАВШИМ ОТ ВОЙНЫ В УКРАИНЕ ЛЮДЯМ ИЗ СЕРБИИ</a>
+                </div>
             </div>
         </div>
     </body>
     <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const e = document.querySelector('#input'),
-                t = document.querySelector('#left'),
-                n = document.querySelector('#last');
-            e.addEventListener('change', () => {
-                const a = Date.parse(e.value) + 25056e5,
-                    o = Date.now(),
-                    s = new Date(a).toLocaleDateString('ru-RU'),
-                    r = a - o,
-                    c = Math.ceil(r / 36e5 / 24);
-                (t.textContent = c),
-                    (n.textContent = s),
-                    c < 10
-                        ? t.classList.add('warning')
-                        : t.classList.remove('warning'),
-                    c < 0
-                        ? t.classList.add('alert')
-                        : t.classList.remove('alert');
-            });
-        });
+window.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector("#input"),t=document.querySelector("#left"),n=document.querySelector("#last");e.addEventListener("change",()=>{const a=Date.parse(e.value)+25056e5,o=Date.now(),s=new Date(a).toLocaleDateString(),r=a-o,c=Math.ceil(r/36e5/24);t.textContent=c,n.textContent=s,c<10?t.classList.add("warning"):t.classList.remove("warning"),c<0?t.classList.add("alert"):t.classList.remove("alert")})});
     </script>
 </html>
