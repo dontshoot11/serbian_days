@@ -139,6 +139,6 @@
         </div>
     </body>
     <script>
-window.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector("#input"),t=document.querySelector("#left"),n=document.querySelector("#last");e.addEventListener("change",()=>{const a=Date.parse(e.value)+25056e5,o=Date.now(),s=new Date(a).toLocaleDateString(),r=a-o,c=Math.ceil(r/36e5/24);t.textContent=c,n.textContent=s,c<10?t.classList.add("warning"):t.classList.remove("warning"),c<0?t.classList.add("alert"):t.classList.remove("alert")})});
+window.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector("#input"),t=document.querySelector("#left"),n=document.querySelector("#last");e.addEventListener("change",()=>{const a=Date.parse(e.value)+25056e5,o=Date.now(),s=new Date(a).toLocaleDateString("ru-RU",options),r=a-o,c=Math.ceil(r/36e5/24);t.textContent=c,n.textContent=s,c<10?t.classList.add("warning"):t.classList.remove("warning"),c<0?t.classList.add("alert"):t.classList.remove("alert")})});
     </script>
 </html>
