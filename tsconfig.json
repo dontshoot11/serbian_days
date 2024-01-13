@@ -1,0 +1,12 @@
+{
+	"extends": "./node_modules/astral-spg/tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"ui-kit/*": ["src/ui-kit/*"],
+			"helpers/*": ["src/helpers/*"],
+			"components/*": ["src/components/*"],
+			"translations/*": ["translations/*"]
+		}
+	}
+}

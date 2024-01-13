@@ -1,0 +1,18 @@
+.section {
+	height: 100%;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+}
+
+.contentWrap {
+	max-width: 800rem;
+	display: grid;
+	gap: 16rem;
+}
+
+.description {
+	a {
+		text-decoration: underline;
+	}
+}

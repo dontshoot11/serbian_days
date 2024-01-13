@@ -1,0 +1,19 @@
+---
+import { getLangSettings } from "astral-spg";
+import Calculator from "../../../../components/Calculator/Calculator.astro";
+import Heading from "../../../../ui-kit/Heading/Heading.astro";
+
+import styles from "./style.module.css";
+
+const { t } = await getLangSettings(Astro.url, "ru");
+---
+
+<section class={styles.section}>
+	<div class="container">
+		<div class={styles.contentWrap}>
+			<Heading type="h1" set:html={t.mp_head} />
+			<div class={styles.description} set:html={t.mp_desc} />
+			<Calculator />
+		</div>
+	</div>
+</section>

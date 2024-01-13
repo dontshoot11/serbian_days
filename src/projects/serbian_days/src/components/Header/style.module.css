@@ -1,0 +1,17 @@
+.header {
+	background: var(--pure-white);
+}
+
+.navMenu {
+	display: grid;
+	grid-auto-flow: column;
+	gap: 20rem;
+	align-items: center;
+	justify-content: center;
+}
+
+.navLink {
+	padding: 20rem 0;
+	position: relative;
+	text-decoration: underline;
+}

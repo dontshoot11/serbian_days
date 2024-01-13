@@ -1,0 +1,14 @@
+---
+interface Props {
+	type: "h1" | "h2" | "h3";
+	color?: "black" | "white";
+}
+const { type, color } = Astro.props;
+const TagName = type;
+
+import styles from "./style.module.css";
+---
+
+<TagName class={(color && styles[color], styles.heading)}>
+	<slot />
+</TagName>
