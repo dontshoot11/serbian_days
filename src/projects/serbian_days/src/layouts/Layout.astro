@@ -1,16 +1,16 @@
 ---
-interface Props {
-	title: string;
-}
-const { title } = Astro.props;
-import { getLangSettings } from "astral-spg";
+import { getLangSettings } from "../translations/translationSettings";
 import Header from "../components/Header/Header.astro";
 import "astral-spg/reset.css";
 import "./styles/fonts.css";
 import "./styles/common.css";
 import "./styles/vars.css";
+const { title } = Astro.props;
+const { currentLang } = getLangSettings(Astro.url);
 
-const { currentLang } = await getLangSettings(Astro.url);
+interface Props {
+	title: string;
+}
 ---
 
 <!doctype html>

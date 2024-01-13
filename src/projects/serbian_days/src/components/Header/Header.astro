@@ -1,10 +1,10 @@
 ---
-import { getLangSettings } from "astral-spg";
 import { NAVIGATION } from "./const/const";
 import styles from "./style.module.css";
 import type { TNavigationItem } from "./types/types";
 
-const { localePrefix, t } = await getLangSettings(Astro.url, "ru");
+import { getLangSettings } from "../../translations/translationSettings";
+const { t, localePrefix } = getLangSettings(Astro.url);
 ---
 
 <header class={styles.header}>

@@ -1,8 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { getLangSettings } from "../../translations/translationSettings";
 import Welcome from "./components/Welcome/Welcome.astro";
-import { getLangSettings } from "astral-spg";
-const { t } = await getLangSettings(Astro.url, "ru");
+
+const { t } = getLangSettings(Astro.url);
 ---
 
 <Layout title={t.mp_head}>

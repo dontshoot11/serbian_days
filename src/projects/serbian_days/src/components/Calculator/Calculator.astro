@@ -1,8 +1,7 @@
 ---
-import { getLangSettings } from "astral-spg";
 import styles from "./style.module.css";
-
-const { t } = await getLangSettings(Astro.url, "ru");
+import { getLangSettings } from "../../translations/translationSettings";
+const { t } = getLangSettings(Astro.url);
 ---
 
 <days-calculator>
