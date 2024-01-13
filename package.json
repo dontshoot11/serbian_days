@@ -5,6 +5,6 @@
     "buildAll": "npx buildAll"
   },
   "dependencies": {
-    "astral-spg": "^0.0.12"
+    "astral-spg": "^0.0.14"
   }
 }
