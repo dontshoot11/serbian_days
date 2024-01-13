@@ -1,0 +1,32 @@
+---
+interface Props {
+	title: string;
+}
+const { title } = Astro.props;
+import { getLangSettings } from "astral-spg";
+import Header from "../components/Header/Header.astro";
+import "astral-spg/reset.css";
+import "./styles/fonts.css";
+import "./styles/common.css";
+import "./styles/vars.css";
+
+const { currentLang } = await getLangSettings(Astro.url);
+---
+
+<!doctype html>
+<html lang={currentLang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon-32x32.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<slot />
+		</main>
+	</body>
+</html>

@@ -1,0 +1,10 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Welcome from "./components/Welcome/Welcome.astro";
+import { getLangSettings } from "astral-spg";
+const { t } = await getLangSettings(Astro.url, "ru");
+---
+
+<Layout title={t.mp_head}>
+	<Welcome />
+</Layout>

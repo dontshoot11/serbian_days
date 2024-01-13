@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "npx start",
+    "build": "npx build",
+    "buildAll": "npx buildAll"
+  },
+  "dependencies": {
+    "astral-spg": "^0.0.1"
+  }
+}

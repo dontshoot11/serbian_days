@@ -1,0 +1,18 @@
+---
+import { Image } from "astro:assets";
+import indyPhoto from "./img/indiana.jpg";
+import styles from "./style.module.css";
+---
+
+<section class={styles.section}>
+	<div class="container">
+		<Image
+			src={indyPhoto}
+			alt="descriptive text"
+			width={indyPhoto.width}
+			height={indyPhoto.height}
+			class={styles.catPhoto}
+			quality={65}
+		/>
+	</div>
+</section>

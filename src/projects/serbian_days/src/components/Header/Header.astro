@@ -1,0 +1,24 @@
+---
+import { getLangSettings } from "astral-spg";
+import { NAVIGATION } from "./const/const";
+import styles from "./style.module.css";
+import type { TNavigationItem } from "./types/types";
+
+const { localePrefix, t } = await getLangSettings(Astro.url, "ru");
+---
+
+<header class={styles.header}>
+	<div class="container">
+		<nav class={styles.navMenu}>
+			{
+				NAVIGATION.map(({ href, text }: TNavigationItem, i) => {
+					return (
+						<a href={`${localePrefix}${href}`} class={styles.navLink}>
+							{t[text]}
+						</a>
+					);
+				})
+			}
+		</nav>
+	</div>
+</header>
