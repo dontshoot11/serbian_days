@@ -5,11 +5,12 @@ import "astral-spg/reset.css";
 import "./styles/fonts.css";
 import "./styles/common.css";
 import "./styles/vars.css";
-const { title } = Astro.props;
+const { title, desc } = Astro.props;
 const { currentLang } = getLangSettings(Astro.url);
 
 interface Props {
 	title: string;
+	desc: string;
 }
 ---
 
@@ -17,7 +18,7 @@ interface Props {
 <html lang={currentLang}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content={desc} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon-32x32.png" />
 		<meta name="generator" content={Astro.generator} />

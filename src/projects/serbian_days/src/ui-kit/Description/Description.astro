@@ -1,0 +1,12 @@
+---
+interface Props {
+	color?: "black" | "white";
+}
+const { color } = Astro.props;
+
+import styles from "./style.module.css";
+---
+
+<p class={(color && styles[color], styles.desc)}>
+	<slot />
+</p>

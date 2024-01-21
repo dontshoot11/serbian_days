@@ -1,0 +1,13 @@
+.desc {
+	a {
+		text-decoration: underline;
+	}
+}
+
+.black {
+	color: var(--dark);
+}
+
+.white {
+	color: var(--light);
+}

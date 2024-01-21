@@ -33,3 +33,16 @@ body {
 		padding: 0 40rem;
 	}
 }
+
+.section {
+	height: 100%;
+	display: grid;
+	justify-content: center;
+	padding-top: 100rem;
+}
+
+.contentWrap {
+	max-width: 800rem;
+	display: grid;
+	gap: 16rem;
+}

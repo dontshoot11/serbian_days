@@ -9,6 +9,6 @@ const TagName = type;
 import styles from "./style.module.css";
 ---
 
-<TagName class={(color && styles[color], styles.heading)}>
+<TagName class:list={[color && styles[color], styles.heading]}>
 	<slot />
 </TagName>

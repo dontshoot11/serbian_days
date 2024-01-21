@@ -13,7 +13,10 @@ const { t, localePrefix } = getLangSettings(Astro.url);
 			{
 				NAVIGATION.map(({ href, text }: TNavigationItem, i) => {
 					return (
-						<a href={`${localePrefix}${href}`} class={styles.navLink}>
+						<a
+							href={`${localePrefix ? localePrefix : ""}${href}`}
+							class={styles.navLink}
+						>
 							{t[text]}
 						</a>
 					);

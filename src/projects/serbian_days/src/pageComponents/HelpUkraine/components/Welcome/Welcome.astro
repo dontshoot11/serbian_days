@@ -1,18 +1,68 @@
 ---
+import { getLangSettings } from "src/projects/serbian_days/src/translations/translationSettings";
+import Heading from "../../../../ui-kit/Heading/Heading.astro";
+import Description from "src/projects/serbian_days/src/ui-kit/Description/Description.astro";
 import { Image } from "astro:assets";
-import indyPhoto from "./img/indiana.jpg";
+import croko from "./img/kroko.png";
+import rdo from "./img/rdo.jpeg";
 import styles from "./style.module.css";
+
+const { t } = getLangSettings(Astro.url);
 ---
 
-<section class={styles.section}>
+<section class="section">
 	<div class="container">
-		<Image
-			src={indyPhoto}
-			alt="descriptive text"
-			width={indyPhoto.width}
-			height={indyPhoto.height}
-			class={styles.catPhoto}
-			quality={65}
-		/>
+		<div class:list={["contentWrap", styles.head]}>
+			<Heading type="h1" set:html={t.help_ukraine} />
+			<Description set:html={t.ukr_desc} />
+		</div>
+		<ul class={styles.list}>
+			<li class={styles.listItem}>
+				<Heading type="h2" set:html={t.ukr_help_head_1} />
+				<Description set:html={t.ukr_help_desc_1} />
+				<iframe
+					class={styles.video}
+					width="560"
+					height="315"
+					src="https://www.youtube.com/embed/SIwFYG4JKdE?si=e0Ue9gk9Fvca2Jgg"
+					title="YouTube video player"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allowfullscreen></iframe>
+				<Description set:html={t.ukr_help_desc_2} />
+				<Description set:html={t.ukr_help_desc_3} />
+				<Description set:html={t.ukr_help_desc_4} />
+			</li>
+			<li class={styles.listItem}>
+				<Heading type="h2" set:html={t.ukr_help_head_2} />
+				<Image
+					src={croko}
+					alt="descriptive text"
+					width={croko.width}
+					height={croko.height}
+					class={styles.kroko}
+					quality={85}
+				/>
+				<Description set:html={t.ukr_help_desc_2_1} />
+				<Description set:html={t.ukr_help_desc_2_2} />
+				<Description set:html={t.ukr_help_desc_2_3} />
+			</li>
+			<li class={styles.listItem}>
+				<div class={styles.itemHead}>
+					<Heading type="h2" set:html={t.ukr_help_head_3} />
+					<Image
+						src={rdo}
+						alt="descriptive text"
+						width={rdo.width}
+						height={rdo.height}
+						class={styles.rdo}
+						quality={85}
+					/>
+				</div>
+				<Description set:html={t.ukr_help_desc_3_1} />
+				<Description set:html={t.ukr_help_desc_3_2} />
+				<Description set:html={t.urk_help_desc_3_3} />
+			</li>
+		</ul>
 	</div>
 </section>

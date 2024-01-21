@@ -6,6 +6,6 @@ import Welcome from "./components/Welcome/Welcome.astro";
 const { t } = getLangSettings(Astro.url);
 ---
 
-<Layout title={t.title}>
+<Layout title={t.title} desc={t.desc}>
 	<Welcome />
 </Layout>

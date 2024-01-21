@@ -2,17 +2,18 @@
 import { getLangSettings } from "src/projects/serbian_days/src/translations/translationSettings";
 import Calculator from "../../../../components/Calculator/Calculator.astro";
 import Heading from "../../../../ui-kit/Heading/Heading.astro";
+import Description from "../../../../ui-kit/Description/Description.astro";
 
 import styles from "./style.module.css";
 
 const { t } = getLangSettings(Astro.url);
 ---
 
-<section class={styles.section}>
+<section class="section">
 	<div class="container">
-		<div class={styles.contentWrap}>
+		<div class="contentWrap">
 			<Heading type="h1" set:html={t.mp_head} />
-			<div class={styles.description} set:html={t.mp_desc} />
+			<Description set:html={t.mp_desc} />
 			<Calculator />
 		</div>
 	</div>

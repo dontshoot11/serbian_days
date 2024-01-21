@@ -1,8 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { getLangSettings } from "../../translations/translationSettings";
 import Welcome from "./components/Welcome/Welcome.astro";
+const { t } = getLangSettings(Astro.url);
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title={t.help_ukraine_title} , desc={t.help_ukraine_meta_desc}>
 	<Welcome />
 </Layout>
