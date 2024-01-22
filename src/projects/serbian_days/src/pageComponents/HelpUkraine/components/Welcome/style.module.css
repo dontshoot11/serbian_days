@@ -28,7 +28,8 @@
 	align-items: center;
 }
 
-.video {
+.video,
+.kroko {
 	max-width: 100%;
 }
 
