@@ -5,6 +5,7 @@ import Description from "src/projects/serbian_days/src/ui-kit/Description/Descri
 import { Image } from "astro:assets";
 import croko from "./img/kroko.png";
 import rdo from "./img/rdo.jpeg";
+import rebuff from "./img/rebuff.jpg";
 import styles from "./style.module.css";
 
 const { t } = getLangSettings(Astro.url);
@@ -49,7 +50,6 @@ const { t } = getLangSettings(Astro.url);
 			</li>
 			<li class={styles.listItem}>
 				<div class={styles.itemHead}>
-					<Heading type="h2" set:html={t.ukr_help_head_3} />
 					<Image
 						src={rdo}
 						alt="descriptive text"
@@ -58,10 +58,27 @@ const { t } = getLangSettings(Astro.url);
 						class={styles.rdo}
 						quality={85}
 					/>
+					<Heading type="h2" set:html={t.ukr_help_head_3} />
 				</div>
 				<Description set:html={t.ukr_help_desc_3_1} />
 				<Description set:html={t.ukr_help_desc_3_2} />
 				<Description set:html={t.urk_help_desc_3_3} />
+			</li>
+			<li class={styles.listItem}>
+				<div class={styles.itemHead}>
+					<Image
+						src={rebuff}
+						alt="descriptive text"
+						width={rebuff.width}
+						height={rebuff.height}
+						class={styles.rebuff}
+						quality={85}
+					/>
+					<Heading type="h2" set:html={t.ukr_help_head_4} />
+				</div>
+				<Description set:html={t.ukr_help_desc_4_1} />
+				<Description set:html={t.ukr_help_desc_4_2} />
+				<Description set:html={t.ukr_help_desc_4_3} />
 			</li>
 		</ul>
 	</div>
