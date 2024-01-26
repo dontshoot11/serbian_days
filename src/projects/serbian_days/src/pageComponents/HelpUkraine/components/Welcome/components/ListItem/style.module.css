@@ -1,0 +1,24 @@
+.listItem {
+	padding: 20rem;
+	display: grid;
+	gap: 20rem;
+	background: var(--bg-light-2);
+	align-content: flex-start;
+}
+
+.itemHead {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 20rem;
+	align-items: center;
+}
+
+.video {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.logo {
+	max-width: 100px;
+	max-height: 100px;
+}

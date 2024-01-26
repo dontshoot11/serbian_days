@@ -2,13 +2,42 @@
 import { getLangSettings } from "src/projects/serbian_days/src/translations/translationSettings";
 import Heading from "../../../../ui-kit/Heading/Heading.astro";
 import Description from "src/projects/serbian_days/src/ui-kit/Description/Description.astro";
-import { Image } from "astro:assets";
-import croko from "./img/kroko.png";
+import ListItem from "./components/ListItem/ListItem.astro";
 import rdo from "./img/rdo.jpeg";
 import rebuff from "./img/rebuff.jpg";
+
+import type { TListItemProps } from "./components/ListItem/ListItem.astro";
+
 import styles from "./style.module.css";
 
 const { t } = getLangSettings(Astro.url);
+
+const ITEMS: TListItemProps[] = [
+	{
+		head: t.ukr_help_head_1,
+		video: "https://www.youtube.com/embed/SIwFYG4JKdE?si=e0Ue9gk9Fvca2Jgg",
+		desc: [
+			t.ukr_help_desc_1,
+			t.ukr_help_desc_2,
+			t.ukr_help_desc_3,
+			t.ukr_help_desc_4,
+		],
+	},
+	{
+		head: t.ukr_help_head_2,
+		desc: [t.ukr_help_desc_2_1, t.ukr_help_desc_2_2, t.ukr_help_desc_2_3],
+	},
+	{
+		head: t.ukr_help_head_3,
+		logo: rdo,
+		desc: [t.ukr_help_desc_3_1, t.ukr_help_desc_3_2, t.ukr_help_desc_3_3],
+	},
+	{
+		head: t.ukr_help_head_4,
+		logo: rebuff,
+		desc: [t.ukr_help_desc_4_1, t.ukr_help_desc_4_2, t.ukr_help_desc_4_3],
+	},
+];
 ---
 
 <section class="section">
@@ -18,68 +47,11 @@ const { t } = getLangSettings(Astro.url);
 			<Description set:html={t.ukr_desc} />
 		</div>
 		<ul class={styles.list}>
-			<li class={styles.listItem}>
-				<Heading type="h2" set:html={t.ukr_help_head_1} />
-				<Description set:html={t.ukr_help_desc_1} />
-				<iframe
-					class={styles.video}
-					width="560"
-					height="315"
-					src="https://www.youtube.com/embed/SIwFYG4JKdE?si=e0Ue9gk9Fvca2Jgg"
-					title="YouTube video player"
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					allowfullscreen></iframe>
-				<Description set:html={t.ukr_help_desc_2} />
-				<Description set:html={t.ukr_help_desc_3} />
-				<Description set:html={t.ukr_help_desc_4} />
-			</li>
-			<li class={styles.listItem}>
-				<Heading type="h2" set:html={t.ukr_help_head_2} />
-				<Image
-					src={croko}
-					alt="descriptive text"
-					width={croko.width}
-					height={croko.height}
-					class={styles.kroko}
-					quality={85}
-				/>
-				<Description set:html={t.ukr_help_desc_2_1} />
-				<Description set:html={t.ukr_help_desc_2_2} />
-				<Description set:html={t.ukr_help_desc_2_3} />
-			</li>
-			<li class={styles.listItem}>
-				<div class={styles.itemHead}>
-					<Image
-						src={rdo}
-						alt="descriptive text"
-						width={rdo.width}
-						height={rdo.height}
-						class={styles.rdo}
-						quality={85}
-					/>
-					<Heading type="h2" set:html={t.ukr_help_head_3} />
-				</div>
-				<Description set:html={t.ukr_help_desc_3_1} />
-				<Description set:html={t.ukr_help_desc_3_2} />
-				<Description set:html={t.urk_help_desc_3_3} />
-			</li>
-			<li class={styles.listItem}>
-				<div class={styles.itemHead}>
-					<Image
-						src={rebuff}
-						alt="descriptive text"
-						width={rebuff.width}
-						height={rebuff.height}
-						class={styles.rebuff}
-						quality={85}
-					/>
-					<Heading type="h2" set:html={t.ukr_help_head_4} />
-				</div>
-				<Description set:html={t.ukr_help_desc_4_1} />
-				<Description set:html={t.ukr_help_desc_4_2} />
-				<Description set:html={t.ukr_help_desc_4_3} />
-			</li>
+			{
+				ITEMS.map(({ head, desc, video, logo }) => {
+					return <ListItem head={head} desc={desc} video={video} logo={logo} />;
+				})
+			}
 		</ul>
 	</div>
 </section>
