@@ -1,0 +1,69 @@
+---
+import { getLangSettings } from "@translations/translationSettings";
+import Heading from "@ui-kit/Heading/Heading.astro";
+import Description from "@ui-kit/Description/Description.astro";
+import ListItem from "./components/ListItem/ListItem.astro";
+import rdo from "./img/rdo.jpeg";
+import rebuff from "./img/rebuff.jpg";
+import rubs from "./img/rubs.jpeg";
+import radosna from "./img/radosna.svg";
+
+import type { TListItemProps } from "./components/ListItem/ListItem.astro";
+
+import styles from "./style.module.css";
+
+const { t } = getLangSettings(Astro.url);
+
+const ITEMS: TListItemProps[] = [
+  {
+    head: t.ukr_help_head_1,
+    video: "https://www.youtube.com/embed/SIwFYG4JKdE?si=e0Ue9gk9Fvca2Jgg",
+    desc: [
+      t.ukr_help_desc_1,
+      t.ukr_help_desc_2,
+      t.ukr_help_desc_3,
+      t.ukr_help_desc_4,
+    ],
+  },
+  {
+    head: t.ukr_help_head_2,
+    desc: [t.ukr_help_desc_2_1, t.ukr_help_desc_2_2, t.ukr_help_desc_2_3],
+  },
+  {
+    head: t.ukr_help_head_3,
+    logo: rdo,
+    desc: [t.ukr_help_desc_3_1, t.ukr_help_desc_3_2, t.ukr_help_desc_3_3],
+  },
+  {
+    head: t.ukr_help_head_4,
+    logo: rebuff,
+    desc: [t.ukr_help_desc_4_1, t.ukr_help_desc_4_2, t.ukr_help_desc_4_3],
+  },
+  {
+    head: t.ukr_help_head_5,
+    logo: rubs,
+    desc: [t.ukr_help_desc_5_1, t.ukr_help_desc_5_2],
+  },
+  {
+    head: t.ukr_help_head_6,
+    logo: radosna,
+    desc: [t.ukr_help_desc_6_1, t.ukr_help_desc_6_2],
+  },
+];
+---
+
+<section class="section">
+  <div class="container">
+    <div class:list={["contentWrap", styles.head]}>
+      <Heading type="h1" set:html={t.help_ukraine} />
+      <Description set:html={t.ukr_desc} />
+    </div>
+    <ul class={styles.list}>
+      {
+        ITEMS.map(({ head, desc, video, logo }) => {
+          return <ListItem head={head} desc={desc} video={video} logo={logo} />;
+        })
+      }
+    </ul>
+  </div>
+</section>

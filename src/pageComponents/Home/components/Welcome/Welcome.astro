@@ -1,0 +1,18 @@
+---
+import { getLangSettings } from "@translations/translationSettings";
+import Calculator from "@components/Calculator/Calculator.astro";
+import Heading from "@ui-kit/Heading/Heading.astro";
+import Description from "@ui-kit/Description/Description.astro";
+
+const { t } = getLangSettings(Astro.url);
+---
+
+<section class="section">
+  <div class="container">
+    <div class="contentWrap">
+      <Heading type="h1" set:html={t.mp_head} />
+      <Description set:html={t.mp_desc} />
+      <Calculator />
+    </div>
+  </div>
+</section>

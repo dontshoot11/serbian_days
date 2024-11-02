@@ -1,10 +1,18 @@
 {
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "start": "npx start",
-    "build": "npx build",
-    "buildAll": "npx buildAll"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "astral-spg": "^0.0.70"
+    "@astrojs/check": "^0.9.4",
+    "astro": "^4.16.8",
+    "typescript": "^5.6.3",
+    "yet-another-reset.css": "^0.0.3"
   }
 }
