@@ -65,12 +65,12 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
         working-directory: ${{ env.BUILD_PATH }}
       - name: Custom Build Command
-        run: npx build serbian_days astro.config.mjs
+        run: npm run build
         working-directory: ${{ env.BUILD_PATH }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.BUILD_PATH }}/dist/serbian_days
+          path: ${{ env.BUILD_PATH }}/dist
 
   deploy:
     environment:
