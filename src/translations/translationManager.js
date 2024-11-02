@@ -6,10 +6,16 @@ export function createTranslationManager(
   const getTranslationsForLocale = (locale) => {
     return translations[locale] || translations[defaultLang];
   };
-  const [, lang] = url.pathname.split("/");
+
   const supportedLanguages = Object.keys(translations);
-  const locale = supportedLanguages.includes(lang) ? lang : defaultLang;
+  const regex = new RegExp(`\/(${supportedLanguages.join("|")})\/`);
+
+  const match = url.pathname.match(regex);
+  const locale = match ? match[1] : null;
+
   const t = getTranslationsForLocale(locale);
-  const localePrefix = locale === defaultLang ? "" : `${locale}/`;
+  const localePrefix =
+    locale === defaultLang || typeof locale !== "string" ? "" : `${locale}/`;
+
   return { currentLang: locale, t, localePrefix };
 }
