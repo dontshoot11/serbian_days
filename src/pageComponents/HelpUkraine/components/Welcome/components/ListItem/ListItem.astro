@@ -1,52 +1,52 @@
 ---
-import Heading from "../../../../../../ui-kit/Heading/Heading.astro";
-import Description from "../../../../../../ui-kit/Description/Description.astro";
+import Heading from "@ui-kit/Heading/Heading.astro";
+import Description from "@ui-kit/Description/Description.astro";
 import { Image } from "astro:assets";
 import styles from "./style.module.css";
 
 export type TListItemProps = {
-	head: string;
-	logo?: ImageMetadata;
-	video?: string;
-	desc: string[];
+  head: string;
+  logo?: ImageMetadata;
+  video?: string;
+  desc: string[];
 };
 
 const { head, logo, desc, video } = Astro.props as TListItemProps;
 ---
 
 <li class={styles.listItem}>
-	<div class={styles.itemHead}>
-		{
-			logo && (
-				<Image
-					src={logo}
-					alt="descriptive text"
-					width={logo.width}
-					height={logo.height}
-					class={styles.logo}
-					quality={85}
-				/>
-			)
-		}
-		<Heading type="h2" set:html={head} />
-	</div>
-	{
-		video && (
-			<iframe
-				class={styles.video}
-				width="560"
-				height="315"
-				src={video}
-				title="YouTube video player"
-				frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				allowfullscreen
-			/>
-		)
-	}
-	{
-		desc.map((descItem: string) => {
-			return <Description set:html={descItem} />;
-		})
-	}
+  <div class={styles.itemHead}>
+    {
+      logo && (
+        <Image
+          src={logo}
+          alt="descriptive text"
+          width={logo.width}
+          height={logo.height}
+          class={styles.logo}
+          quality={85}
+        />
+      )
+    }
+    <Heading type="h2" set:html={head} />
+  </div>
+  {
+    video && (
+      <iframe
+        class={styles.video}
+        width="560"
+        height="315"
+        src={video}
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      />
+    )
+  }
+  {
+    desc.map((descItem: string) => {
+      return <Description set:html={descItem} />;
+    })
+  }
 </li>
