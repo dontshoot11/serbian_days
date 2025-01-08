@@ -5,6 +5,7 @@
       "@ui-kit/*": ["src/ui-kit/*"],
       "@helpers/*": ["src/helpers/*"],
       "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
       "@translations/*": ["src/translations/*"]
     }
   }
