@@ -6,7 +6,8 @@
       "@helpers/*": ["src/helpers/*"],
       "@components/*": ["src/components/*"],
       "@translations/*": ["src/translations/*"],
-      "@pageComponents/*": ["src/pageComponents/*"]
+      "@pageComponents/*": ["src/pageComponents/*"],
+      "@layouts/*": ["src/layouts/*"]
     }
   }
 }
